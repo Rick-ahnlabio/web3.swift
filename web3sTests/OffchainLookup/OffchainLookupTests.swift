@@ -12,7 +12,7 @@ struct DummyOffchainENSResolve: ABIFunction {
     var gasPrice: BigUInt?
     var gasLimit: BigUInt?
 
-    var contract: EthereumAddress = "0x5d3B57647E36a95AFb3d6F04c2587571B4cfF3cc"
+    var contract: EthereumAddress = "0x03669aC51fCf68302440d2e8b63F91F901DDE212"
 
     var from: EthereumAddress?
     var node: Data
@@ -164,7 +164,7 @@ class OffchainLookupTests: XCTestCase {
             let decoded = try? error?.decode(error: offchainLookup)
 
             XCTAssertEqual(error?.code, JSONRPCErrorCode.contractExecution)
-            XCTAssertEqual(try? decoded?[0].decoded(), EthereumAddress("0x5d3b57647e36a95afb3d6f04c2587571b4cff3cc"))
+            XCTAssertEqual(try? decoded?[0].decoded(), EthereumAddress("0x03669aC51fCf68302440d2e8b63F91F901DDE212"))
             XCTAssertEqual(try? decoded?[1].decodedArray(), ["https://argent.xyz"])
             XCTAssertEqual(try? decoded?[2].decoded(), Data(hex: "0x35b8485202b076a4e2d0173bf3d7e69546db3eb92389469473b2680c3cdb4427cafbcf2a")!)
             XCTAssertEqual(try? decoded?[3].decoded(), Data(hex: "0xd2479f3e")!)
